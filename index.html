@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rehan's Multicuisine Restaurant - Taste the World in One Place">
+    <title>Rehan's Multicuisine Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sticky Header/Navbar -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo on the left -->
+                <div class="logo">
+                    <img src="assets/logo.png" alt="Rehan's Multicuisine Restaurant Logo">
+                </div>
+                
+                <!-- Navigation links on the right -->
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#menu" class="nav-link">Menu</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <!-- Mobile menu toggle -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Rehan's Multicuisine Restaurant</h1>
+            <p class="hero-tagline">Taste the World in One Place</p>
+            <a href="#menu" class="btn-primary">Explore Menu</a>
+        </div>
+    </section>
+
+    <!-- Image Carousel Section - 3D Showcase -->
+    <section class="carousel-section">
+        <div class="carousel-wrapper">
+            <div class="carousel-3d-container" id="carousel3D">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Carousel slides will be dynamically inserted via JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Navigation Controls -->
+            <div class="carousel-controls">
+                <button class="carousel-nav-btn carousel-nav-prev" id="prevBtn" aria-label="Previous slide">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="carousel-progress">
+                    <div class="carousel-progress-bar" id="progressBar"></div>
+                </div>
+                <button class="carousel-nav-btn carousel-nav-next" id="nextBtn" aria-label="Next slide">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <!-- Slide Counter -->
+            <div class="carousel-counter">
+                <span id="currentSlideNum">01</span>
+                <span class="counter-divider">/</span>
+                <span id="totalSlidesNum">11</span>
+            </div>
+            
+            <!-- Thumbnail Navigation -->
+            <div class="carousel-thumbnails" id="carouselThumbnails">
+                <!-- Thumbnails will be dynamically inserted via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-description">
+                        Welcome to Rehan's Multicuisine Restaurant (also known as Rehan Café), a popular dining spot 
+                        in Pernambut, Tamil Nadu. We bring you an authentic dining experience that celebrates diverse 
+                        cuisines from around the world, right in the heart of Tamil Nadu.
+                    </p>
+                    <p class="about-description">
+                        With years of expertise and a commitment to quality, we source the freshest ingredients 
+                        to create dishes that tantalize your taste buds. From traditional recipes passed down 
+                        through generations to innovative fusion creations, every plate tells a story.
+                    </p>
+                    <p class="about-description">
+                        Whether you prefer dine-in, takeaway, or delivery, we've got you covered. Our warm and 
+                        inviting atmosphere, combined with exceptional service, ensures that every visit is memorable. 
+                        Join us on a gastronomic journey that transcends borders and cultures.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="assets/logo.png" alt="Restaurant interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <h2 class="section-title">Our Menu</h2>
+            <div class="menu-content">
+                <div class="menu-book-container">
+                    <div class="menu-book" id="menuBook">
+                        <!-- Menu pages will be dynamically inserted via JavaScript -->
+                    </div>
+                    <div class="menu-book-controls">
+                        <button class="book-nav-btn book-nav-prev" id="bookPrev" aria-label="Previous page">
+                            <i class="fas fa-chevron-left"></i>
+                            <span>Prev</span>
+                        </button>
+                        <div class="book-page-indicator">
+                            <span id="currentPage">1</span> / <span id="totalPages">11</span>
+                        </div>
+                        <button class="book-nav-btn book-nav-next" id="bookNext" aria-label="Next page">
+                            <span>Next</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="book-zoom-hint">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Click on any page to view full size</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Modal -->
+    <div class="modal" id="menuModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <img src="" alt="Menu Image" class="modal-image" id="modalImage">
+            <button class="modal-nav modal-nav-prev" id="modalPrev" aria-label="Previous menu image">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="modal-nav modal-nav-next" id="modalNext" aria-label="Next menu image">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="feature-title">Fresh Ingredients</h3>
+                    <p class="feature-description">
+                        We use only the freshest, locally sourced ingredients to ensure the highest quality 
+                        in every dish we serve.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="feature-title">Multicuisine Variety</h3>
+                    <p class="feature-description">
+                        Explore a diverse range of cuisines from around the world, all under one roof.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Hygienic Kitchen</h3>
+                    <p class="feature-description">
+                        Our kitchen maintains the highest standards of cleanliness and food safety protocols.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="feature-title">Cozy Ambience</h3>
+                    <p class="feature-description">
+                        Enjoy a warm and welcoming atmosphere perfect for family dinners and special occasions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section - Creative Grid -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <p class="gallery-subtitle">A Visual Journey Through Our Culinary Excellence</p>
+            <div class="gallery-showcase" id="galleryShowcase">
+                <!-- Gallery items will be dynamically inserted via JavaScript -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Lightbox Modal -->
+    <div class="gallery-lightbox" id="galleryLightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="lightbox-content">
+            <img src="" alt="Gallery Image" id="lightboxImage">
+            <div class="lightbox-info">
+                <span id="lightboxCounter"></span>
+            </div>
+        </div>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Address</h3>
+                            <p>283, Bazaar St, Peranampattu<br>Pernambut, Tamil Nadu 635810</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p><a href="tel:+917200484111" class="phone-link">+91 72004 84111</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Working Hours</h3>
+                            <p>Monday - Friday: 11:00 AM - 10:00 PM<br>
+                               Saturday - Sunday: 10:00 AM - 11:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/logo.png" alt="Rehan's Multicuisine Restaurant Logo">
+                    </div>
+                    <p class="footer-description">
+                        Taste the World in One Place. Experience culinary excellence at Rehan's Multicuisine Restaurant 
+                        (Rehan Café) in Pernambut, Tamil Nadu. Dine-in, takeaway, and delivery available.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/rehans_multicuisine_resturant/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/people/Rehans-Caffe" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://wa.me/917200484111" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Rehan's Multicuisine Restaurant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
