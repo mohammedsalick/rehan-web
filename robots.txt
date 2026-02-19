@@ -1,0 +1,17 @@
+# robots.txt for Rehan's Multicuisine Restaurant
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all images
+Allow: /assets/
+
+# Sitemap location
+Sitemap: https://rehansmulticuisine.com/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1
